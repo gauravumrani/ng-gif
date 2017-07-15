@@ -1,0 +1,22 @@
+<h2>{{heading}}</h2>
+<div class="row" *ngIf="showGIF; else load">
+	<div class="col-md-4 animated fadeIn" *ngFor="let gif of gif_data">
+		<div *ngFor="let media of gif.media">
+			<div style="margin-bottom: 20px;" class="card" ripple-radius>
+				<!--Card image-->
+				<img class="img-fluid" [src]="media?.tinygif.url" alt="Card image cap">
+				<p><i  (click)="shareFB(media?.tinygif.url)" class="fa fa-facebook-official bgicon fb" aria-hidden="true"></i>
+					<a href="whatsapp://send?text=Hey Have a Look at it,
+					Share & Find GIF Here" data-action="share/whatsapp/share"><i class="fa fa-whatsapp bgicon ws" aria-hidden="true"></i></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<ng-template #load>
+<div class="row">
+		<div class="col-md-12">
+			Loading
+		</div>
+</div>		
+</ng-template>

@@ -1,0 +1,25 @@
+.ntop{
+	margin-top:80px;
+}
+.card {
+	& p{
+		margin:0;
+		padding-left:10px;
+	}
+}
+.bgicon{
+	font-size:25px;
+	padding:15px;
+	border-right: 1px solid #e8e8e8;
+	transition: .2s ease-in;
+	&:hover{
+		cursor:pointer;
+		box-shadow: 0px 0px 5px 0px grey;
+	}
+	&.fb:hover{
+		color: blue;
+	}
+	&.ws:hover{
+		color: green;
+	}
+}

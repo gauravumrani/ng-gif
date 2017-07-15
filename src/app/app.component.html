@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="container  animated fadeIn">
+	<div class="row ntop">
+		<div class="col-md-3">
+			<div class="md-form">
+				<input mdbActive type="text" (keyup)="getSug()" [(ngModel)]="search" [value]="search" id="form1" class="form-control">
+				<label for="form1" class="">Enter Word</label>
+			</div>
+			<div class="suggest" *ngIf="showSug">
+				<ul class="mainmenu" *ngFor="let item of result">
+					<li><a (click)="srch(item);showSug=!showSug;search=item" href="javascript:void(0)">{{item}}</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<app-home [(mydata)]="searchVal"></app-home>
+		</div>
+	</div>
+</div>
