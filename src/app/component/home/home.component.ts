@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit ,OnChanges{
 	}
 	ngOnChanges() {
 		this.search_home=this.mydata;
-		console.log(this.search_home);
 		if(this.search_home!=undefined  && this.search_home!==""){
 			console.log("here");
 			this.searchgif(this.search_home);
