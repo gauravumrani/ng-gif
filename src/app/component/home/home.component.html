@@ -1,4 +1,5 @@
 <h2>{{heading}}</h2>
+<progress-spinner spinnerType="big"></progress-spinner>  
 <div class="row" *ngIf="showGIF; else load">
 	<div class="col-md-4 animated fadeIn" *ngFor="let gif of gif_data">
 		<div *ngFor="let media of gif.media">
@@ -14,9 +15,11 @@
 	</div>
 </div>
 <ng-template #load>
-<div class="row">
-		<div class="col-md-12">
-			Loading
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<img style="width: 150px;" src="https://cdn.dribbble.com/users/108390/screenshots/2882839/spinner-loop.gif" alt="Loading...">
 		</div>
-</div>		
+		<div class="col-md-4"></div>
+	</div>		
 </ng-template>

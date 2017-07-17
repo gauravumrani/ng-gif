@@ -18,4 +18,9 @@ export class GifService {
 		.map(res=>res.json());
 	}
 
+	hourlyTrends(){
+		return this.http.get(`https://api.tenor.com/v1/autocomplete?type=trending&key=UMH7AAOIAOP3`)
+		.map(res=>res.json());
+	}
+
 }

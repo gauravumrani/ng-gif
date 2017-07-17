@@ -11,14 +11,21 @@ export class AppComponent implements OnInit {
   showSug=false;
   result=[];
   searchVal:string;
+  hourTrends:any;
   constructor(private gif:GifService){
 
   }
   ngOnInit(){
-
+    this.gif.hourlyTrends().subscribe(data=>{
+      this.hourTrends=data.results;
+      console.log(this.hourTrends);
+    });
   }
 
-  getSug(){
+  getSug(event){
+    if(event.keyCode==13){
+      this.searchVal=this.search;
+    }
   	this.gif.getAutoSuggestion(this.search)
   	.subscribe(data=>{
   		this.result=data.results;
@@ -33,5 +40,8 @@ export class AppComponent implements OnInit {
   }
   srch(item){
   	this.searchVal=item;
+  }
+  srchHourTrends(item){
+    this.searchVal=item;
   }
 }

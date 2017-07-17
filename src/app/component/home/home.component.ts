@@ -17,13 +17,10 @@ export class HomeComponent implements OnInit ,OnChanges{
 
 	ngOnInit() {
 		this.search_home=this.mydata;
-		this.gif_data=this.gif.getTrending().subscribe(data=>{
+		this.gif.getTrending().subscribe(data=>{
 			this.gif_data=data.results;
 		});
-		let root=this;
-		setTimeout(function(){
-			root.showGIF=true;
-		},5000);
+		this.ShowGif();
 	}
 	ngOnChanges() {
 		this.search_home=this.mydata;
@@ -31,6 +28,7 @@ export class HomeComponent implements OnInit ,OnChanges{
 		if(this.search_home!=undefined  && this.search_home!==""){
 			console.log("here");
 			this.searchgif(this.search_home);
+			this.ShowGif();
 		}
 	}
 	shareFB(url){
@@ -41,11 +39,17 @@ export class HomeComponent implements OnInit ,OnChanges{
 			); 
 	}
 	searchgif(item){
+		this.showGIF=false;
 		this.gif.searchGIF(item)
 		.subscribe(data=>{
-			//console.log(data);
 			this.gif_data=data.results;
 			this.heading=`Your Search "${item}"`;
 		});
+	}
+	ShowGif(){
+		let root=this;
+		setTimeout(function(){
+			root.showGIF=true;
+		},3000);
 	}
 }
