@@ -7,6 +7,8 @@ import {GifService} from './services/gif.service';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './component/home/home.component';
 import { HttpModule } from '@angular/http';
+import { ClipboardModule } from 'ng2-clipboard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,8 @@ import { HttpModule } from '@angular/http';
   FormsModule,
     BrowserModule,
    MDBBootstrapModule.forRoot(),
-   HttpModule
+   HttpModule,
+   ClipboardModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [GifService],

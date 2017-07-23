@@ -1,5 +1,6 @@
 import { Component, OnInit,Input,OnChanges } from '@angular/core';
 import {GifService} from '../../services/gif.service';
+import { ClipboardService } from 'ng2-clipboard/ng2-clipboard';
 
 @Component({
 	selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit ,OnChanges{
 	gif_data;
 	heading="Trending";
 	showGIF=false;
-	constructor(private gif:GifService) { }
+	constructor(private gif:GifService,private clipboard: ClipboardService) { }
 
 	ngOnInit() {
 		this.search_home=this.mydata;
@@ -32,7 +33,7 @@ export class HomeComponent implements OnInit ,OnChanges{
 	}
 	shareFB(url){
 		window.open(
-			'http://www.facebook.com/sharer.php?s=100&p[title]=Gif&p[summary]=Look, Its Cool &p[url]='+url,
+			'http://www.facebook.com/sharer.php?u='+url,
 			'facebook-share-dialog', 
 			'width=626,height=436'
 			); 
@@ -50,5 +51,15 @@ export class HomeComponent implements OnInit ,OnChanges{
 		setTimeout(function(){
 			root.showGIF=true;
 		},3000);
+	}
+	viewGif(gif_url,image){
+		image.src=gif_url;
+	}
+	removeGif(img_url,image){
+		image.src=img_url;
+	}
+	copyGif(gif_url){
+		this.clipboard.copy(gif_url);
+		alert('URL Copied' +gif_url);
 	}
 }

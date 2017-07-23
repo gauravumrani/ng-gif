@@ -28,11 +28,9 @@ export class AppComponent implements OnInit {
     var charKeyCode = event.keyCode || event.which;
     if (charKeyCode == 0 || charKeyCode == 229) { 
       charKeyCode = this.getKeyCode(this.search);
-      alert(charKeyCode+' key Pressed');
     }else{
-      alert(charKeyCode+' key Pressed');
     }
-    if(event.keyCode==13){
+    if(charKeyCode==13){
       this.searchVal=this.search;
     }
     this.gif.getAutoSuggestion(this.search)
