@@ -71,7 +71,6 @@ var AppComponent = (function () {
         var _this = this;
         this.gif.hourlyTrends().subscribe(function (data) {
             _this.hourTrends = data.results;
-            console.log(_this.hourTrends);
         });
     };
     AppComponent.prototype.getSug = function (event) {
