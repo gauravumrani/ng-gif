@@ -6,8 +6,7 @@
 				<!--Card image-->
 				<img id="gif_{{i}}" #image class="img-fluid" [src]="media?.tinygif.preview" (mouseenter)="viewGif(media?.tinygif.url,image)" (mouseleave)="removeGif(media?.tinygif.preview,image)" alt="Card image cap">
 				<p><i  (click)="shareFB(media?.tinygif.url)" class="fa fa-facebook-official bgicon fb" aria-hidden="true"></i>
-					<a href="whatsapp://send?data-text=Take a look at this awesome GIF&data-href={{media?.tinygif.url}}&data-action=are/whatsapp/share "><i class="fa fa-whatsapp bgicon ws" aria-hidden="true"></i>
-					</a>
+					
 					<i  (click)="copyGif(media?.tinygif.url)" class="fa fa-link bgicon" aria-hidden="true"></i>
 				</p>
 			</div>
@@ -23,3 +22,4 @@
 		<div class="col-md-4"></div>
 	</div>		
 </ng-template>
+

@@ -21,7 +21,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n/* define a fixed width for the entire menu */\n.suggest {\n  width: 180px;\n  border: 1px solid #efefef;\n  position: absolute;\n  background: white;\n  top: 56px;\n}\n\n/* reset our lists to remove bullet points and padding */\n.mainmenu, .submenu {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n\n/* make ALL links (main and submenu) have padding and background color */\n.mainmenu a {\n  display: block;\n  border-bottom: 1px solid #e5e5e5;\n  text-decoration: none;\n  padding: 10px;\n  color: #000;\n}\n\n/* add hover behaviour */\n.mainmenu a:hover {\n  background-color: #f3f3f3;\n}\n\n\n/* when hovering over a .mainmenu item,\n  display the submenu inside it.\n  we're changing the submenu's max-height from 0 to 200px;\n  */\n\n  .mainmenu li:hover .submenu {\n    display: block;\n    max-height: 200px;\n  }\n\n/*\n  we now overwrite the background-color for .submenu links only.\n  CSS reads down the page, so code at the bottom will overwrite the code at the top.\n  */\n\n  .submenu a {\n    background-color: #999;\n  }\n\n  /* hover behaviour for links inside .submenu */\n  .submenu a:hover {\n    background-color: #666;\n  }\n\n/* this is the initial state of all submenus.\n  we set it to max-height: 0, and hide the overflowed content.\n  */\n  .submenu {\n    overflow: hidden;\n    max-height: 0;\n    -webkit-transition: all 0.5s ease-out;\n  }", ""]);
+exports.push([module.i, "\r\n/* define a fixed width for the entire menu */\r\n.suggest {\r\n  width: 180px;\r\n  border: 1px solid #efefef;\r\n  position: absolute;\r\n  background: white;\r\n  top: 56px;\r\n}\r\n\r\n/* reset our lists to remove bullet points and padding */\r\n.mainmenu, .submenu {\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n/* make ALL links (main and submenu) have padding and background color */\r\n.mainmenu a {\r\n  display: block;\r\n  border-bottom: 1px solid #e5e5e5;\r\n  text-decoration: none;\r\n  padding: 10px;\r\n  color: #000;\r\n}\r\n\r\n/* add hover behaviour */\r\n.mainmenu a:hover {\r\n  background-color: #f3f3f3;\r\n}\r\n\r\n\r\n/* when hovering over a .mainmenu item,\r\n  display the submenu inside it.\r\n  we're changing the submenu's max-height from 0 to 200px;\r\n  */\r\n\r\n  .mainmenu li:hover .submenu {\r\n    display: block;\r\n    max-height: 200px;\r\n  }\r\n\r\n/*\r\n  we now overwrite the background-color for .submenu links only.\r\n  CSS reads down the page, so code at the bottom will overwrite the code at the top.\r\n  */\r\n\r\n  .submenu a {\r\n    background-color: #999;\r\n  }\r\n\r\n  /* hover behaviour for links inside .submenu */\r\n  .submenu a:hover {\r\n    background-color: #666;\r\n  }\r\n\r\n/* this is the initial state of all submenus.\r\n  we set it to max-height: 0, and hide the overflowed content.\r\n  */\r\n  .submenu {\r\n    overflow: hidden;\r\n    max-height: 0;\r\n    -webkit-transition: all 0.5s ease-out;\r\n  }", ""]);
 
 // exports
 
@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"container  animated fadeIn\">\n\t<div class=\"row ntop\">\n\t\t<div class=\"col-md-3\">\n\t\t\t<div class=\"md-form\">\n\t\t\t\t<input mdbActive type=\"text\" (keyup)=\"getSug($event)\" [(ngModel)]=\"search\" [value]=\"search\" id=\"form1\" class=\"form-control\">\n\t\t\t\t<label for=\"form1\" class=\"\">Enter Word</label>\n\t\t\t</div>\n\t\t\t<div class=\"suggest\" *ngIf=\"showSug\">\n\t\t\t\t<ul class=\"mainmenu\" *ngFor=\"let item of result\">\n\t\t\t\t\t<li><a (click)=\"srch(item);showSug=!showSug;search=item\" href=\"javascript:void(0)\">{{item}}</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<br>\n\t\t\t<h4><p>Hourly Trendings</p></h4>\n\t\t\t<div class=\"tags\">\n\t\t\t\t<button *ngFor=\"let tags of hourTrends;let i=index\" type=\"button\" class=\"btn btn-sm\" [ngClass]=\"{'btn-success':i%2==0,'btn-primary':i%3==0,'btn-danger':i%5==0,'btn-info':i%4==0}\" ripple-radius  (click)=\"srchHourTrends(tags);\">{{tags}}</button>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-md-9\">\n\t\t\t<app-home [mydata]=\"searchVal\"></app-home>\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<app-navbar></app-navbar>\r\n<div class=\"container  animated fadeIn\">\r\n\t<div class=\"row ntop\">\r\n\t\t<div class=\"col-md-3\">\r\n\t\t\t<div class=\"md-form\">\r\n\t\t\t\t<input mdbActive type=\"text\" (keyup)=\"getSug($event)\" [(ngModel)]=\"search\" [value]=\"search\" id=\"form1\" class=\"form-control\">\r\n\t\t\t\t<label for=\"form1\" class=\"\">Enter Word</label>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"suggest\" *ngIf=\"showSug\">\r\n\t\t\t\t<ul class=\"mainmenu\" *ngFor=\"let item of result\">\r\n\t\t\t\t\t<li><a (click)=\"srch(item);showSug=!showSug;search=item\" href=\"javascript:void(0)\">{{item}}</a></li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t\t<br>\r\n\t\t\t<h4><p>Hourly Trendings</p></h4>\r\n\t\t\t<div class=\"tags\">\r\n\t\t\t\t<button *ngFor=\"let tags of hourTrends;let i=index\" type=\"button\" class=\"btn btn-sm\" [ngClass]=\"{'btn-success':i%2==0,'btn-primary':i%3==0,'btn-danger':i%5==0,'btn-info':i%4==0}\" ripple-radius  (click)=\"srchHourTrends(tags);\">{{tags}}</button>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-9\">\r\n\t\t\t<app-home [mydata]=\"searchVal\"></app-home>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -183,7 +183,7 @@ AppModule = __decorate([
 /***/ "../../../../../src/app/component/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>{{heading}}</h2>\n<div class=\"row\" *ngIf=\"showGIF; else load\">\n\t<div class=\"col-md-4 animated fadeIn\" *ngFor=\"let gif of gif_data; let i=index\">\n\t\t<div *ngFor=\"let media of gif.media\">\n\t\t\t<div style=\"margin-bottom: 20px;\" class=\"card\" ripple-radius>\n\t\t\t\t<!--Card image-->\n\t\t\t\t<img id=\"gif_{{i}}\" #image class=\"img-fluid\" [src]=\"media?.tinygif.preview\" (mouseenter)=\"viewGif(media?.tinygif.url,image)\" (mouseleave)=\"removeGif(media?.tinygif.preview,image)\" alt=\"Card image cap\">\n\t\t\t\t<p><i  (click)=\"shareFB(media?.tinygif.url)\" class=\"fa fa-facebook-official bgicon fb\" aria-hidden=\"true\"></i>\n\t\t\t\t\t<a href=\"whatsapp://send?data-text=Take a look at this awesome GIF&data-href={{media?.tinygif.url}}&data-action=are/whatsapp/share \"><i class=\"fa fa-whatsapp bgicon ws\" aria-hidden=\"true\"></i>\n\t\t\t\t\t</a>\n\t\t\t\t\t<i  (click)=\"copyGif(media?.tinygif.url)\" class=\"fa fa-link bgicon\" aria-hidden=\"true\"></i>\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<ng-template #load>\n\t<div class=\"row\">\n\t\t<div class=\"col-md-4\"></div>\n\t\t<div class=\"col-md-4\">\n\t\t\t<img style=\"width: 150px;\" src=\"https://cdn.dribbble.com/users/108390/screenshots/2882839/spinner-loop.gif\" alt=\"Loading...\">\n\t\t</div>\n\t\t<div class=\"col-md-4\"></div>\n\t</div>\t\t\n</ng-template>\n"
+module.exports = "<h2>{{heading}}</h2>\r\n<div class=\"row\" *ngIf=\"showGIF; else load\">\r\n\t<div class=\"col-md-4 animated fadeIn\" *ngFor=\"let gif of gif_data; let i=index\">\r\n\t\t<div *ngFor=\"let media of gif.media\">\r\n\t\t\t<div style=\"margin-bottom: 20px;\" class=\"card\" ripple-radius>\r\n\t\t\t\t<!--Card image-->\r\n\t\t\t\t<img id=\"gif_{{i}}\" #image class=\"img-fluid\" [src]=\"media?.tinygif.preview\" (mouseenter)=\"viewGif(media?.tinygif.url,image)\" (mouseleave)=\"removeGif(media?.tinygif.preview,image)\" alt=\"Card image cap\">\r\n\t\t\t\t<p><i  (click)=\"shareFB(media?.tinygif.url)\" class=\"fa fa-facebook-official bgicon fb\" aria-hidden=\"true\"></i>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<i  (click)=\"copyGif(media?.tinygif.url)\" class=\"fa fa-link bgicon\" aria-hidden=\"true\"></i>\r\n\t\t\t\t</p>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n<ng-template #load>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-4\"></div>\r\n\t\t<div class=\"col-md-4\">\r\n\t\t\t<img style=\"width: 150px;\" src=\"https://cdn.dribbble.com/users/108390/screenshots/2882839/spinner-loop.gif\" alt=\"Loading...\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-4\"></div>\r\n\t</div>\t\t\r\n</ng-template>\r\n\r\n"
 
 /***/ }),
 
@@ -276,7 +276,7 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.copyGif = function (gif_url) {
         this.clipboard.copy(gif_url);
-        alert('URL Copied' + gif_url);
+        alert('URL Copied ' + gif_url);
     };
     return HomeComponent;
 }());
@@ -301,7 +301,7 @@ var _a, _b;
 /***/ "../../../../../src/app/component/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<navbar SideClass=\"navbar navbar-toggleable-md navbar-dark blue  animated fadeIn\">\n    <logo><a class=\"logo navbar-brand \" href=\"#\" ripple-radius><i class=\"fa fa-film\" aria-hidden=\"true\"></i> GIF App</a></logo>\n    <links>\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\" ripple-radius>\n                <a class=\"nav-link\">Home<span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\" ripple-radius>\n                <a class=\"nav-link\">Features</a>\n            </li>\n        </ul>\n    </links>\n</navbar>\n\n"
+module.exports = "<navbar SideClass=\"navbar navbar-toggleable-md navbar-dark blue  animated fadeIn\">\r\n    <logo><a class=\"logo navbar-brand \" href=\"#\" ripple-radius><i class=\"fa fa-film\" aria-hidden=\"true\"></i> GIF App</a></logo>\r\n   \r\n</navbar>\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -417,13 +417,8 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: false
+    production: true
 };
 //# sourceMappingURL=environment.js.map
 
@@ -459,4 +454,3 @@ module.exports = __webpack_require__("../../../../../src/main.ts");
 /***/ })
 
 },[1]);
-//# sourceMappingURL=main.bundle.js.map

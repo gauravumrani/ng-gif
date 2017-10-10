@@ -60,6 +60,6 @@ export class HomeComponent implements OnInit ,OnChanges{
 	}
 	copyGif(gif_url){
 		this.clipboard.copy(gif_url);
-		alert('URL Copied' +gif_url);
+		alert('URL Copied ' +gif_url);
 	}
 }

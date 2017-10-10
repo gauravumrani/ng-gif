@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.gif.hourlyTrends().subscribe(data=>{
       this.hourTrends=data.results;
-      console.log(this.hourTrends);
     });
   }
   getKeyCode = function (str) {

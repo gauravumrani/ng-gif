@@ -70,4 +70,3 @@ module.exports = __webpack_require__("../../../../script-loader/index.js!../../.
 /***/ })
 
 },[3]);
-//# sourceMappingURL=scripts.bundle.js.map
